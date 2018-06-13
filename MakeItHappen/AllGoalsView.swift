@@ -44,6 +44,9 @@ class AllGoalsView: UITableViewController {
     
     @objc func handelAdd(){
         print("opening add modal")
+        let modal = AddGaolController()
+        let navController = UINavigationController(rootViewController: modal)
+        present(navController, animated: true, completion: nil)
     }
     
     func setupNavbar(){
