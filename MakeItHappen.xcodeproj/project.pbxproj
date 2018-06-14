@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D51D84DD20D03CA9006A7AE0 /* AddGoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51D84DC20D03CA9006A7AE0 /* AddGoalController.swift */; };
+		D5672A4420D3217A000E0D30 /* CostumNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5672A4320D3217A000E0D30 /* CostumNavigationBar.swift */; };
 		D58C472220C8A4C000FCEC13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C472120C8A4C000FCEC13 /* AppDelegate.swift */; };
 		D58C472420C8A4C000FCEC13 /* GoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C472320C8A4C000FCEC13 /* GoalController.swift */; };
 		D58C472720C8A4C000FCEC13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58C472520C8A4C000FCEC13 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		D51D84DC20D03CA9006A7AE0 /* AddGoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalController.swift; sourceTree = "<group>"; };
+		D5672A4320D3217A000E0D30 /* CostumNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumNavigationBar.swift; sourceTree = "<group>"; };
 		D58C471E20C8A4C000FCEC13 /* MakeItHappen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeItHappen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58C472120C8A4C000FCEC13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D58C472320C8A4C000FCEC13 /* GoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			children = (
 				D58C472120C8A4C000FCEC13 /* AppDelegate.swift */,
 				D5E902C620CF2B7600312EC0 /* AllGoalsView.swift */,
+				D5672A4320D3217A000E0D30 /* CostumNavigationBar.swift */,
 				D58C472320C8A4C000FCEC13 /* GoalController.swift */,
 				D58C473520C9663500FCEC13 /* PageCell.swift */,
 				D51D84DC20D03CA9006A7AE0 /* AddGoalController.swift */,
@@ -152,6 +155,7 @@
 				D51D84DD20D03CA9006A7AE0 /* AddGoalController.swift in Sources */,
 				D58C472420C8A4C000FCEC13 /* GoalController.swift in Sources */,
 				D58C472220C8A4C000FCEC13 /* AppDelegate.swift in Sources */,
+				D5672A4420D3217A000E0D30 /* CostumNavigationBar.swift in Sources */,
 				D58C473620C9663500FCEC13 /* PageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
