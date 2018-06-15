@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D51D84DD20D03CA9006A7AE0 /* AddGoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51D84DC20D03CA9006A7AE0 /* AddGoalController.swift */; };
 		D5672A4420D3217A000E0D30 /* CostumNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5672A4320D3217A000E0D30 /* CostumNavigationBar.swift */; };
+		D5672A4720D3FF09000E0D30 /* MakeItHappenCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5672A4520D3FF09000E0D30 /* MakeItHappenCoreData.xcdatamodeld */; };
+		D5672A4920D400A8000E0D30 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5672A4820D400A8000E0D30 /* CoreDataManager.swift */; };
 		D58C472220C8A4C000FCEC13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C472120C8A4C000FCEC13 /* AppDelegate.swift */; };
 		D58C472420C8A4C000FCEC13 /* GoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C472320C8A4C000FCEC13 /* GoalController.swift */; };
 		D58C472720C8A4C000FCEC13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58C472520C8A4C000FCEC13 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		D51D84DC20D03CA9006A7AE0 /* AddGoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalController.swift; sourceTree = "<group>"; };
 		D5672A4320D3217A000E0D30 /* CostumNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumNavigationBar.swift; sourceTree = "<group>"; };
+		D5672A4620D3FF09000E0D30 /* MakeItHappenCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MakeItHappenCoreData.xcdatamodel; sourceTree = "<group>"; };
+		D5672A4820D400A8000E0D30 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D58C471E20C8A4C000FCEC13 /* MakeItHappen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeItHappen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58C472120C8A4C000FCEC13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D58C472320C8A4C000FCEC13 /* GoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalController.swift; sourceTree = "<group>"; };
@@ -66,7 +70,9 @@
 			children = (
 				D58C472120C8A4C000FCEC13 /* AppDelegate.swift */,
 				D5E902C620CF2B7600312EC0 /* AllGoalsView.swift */,
+				D5672A4820D400A8000E0D30 /* CoreDataManager.swift */,
 				D5672A4320D3217A000E0D30 /* CostumNavigationBar.swift */,
+				D5672A4520D3FF09000E0D30 /* MakeItHappenCoreData.xcdatamodeld */,
 				D58C472320C8A4C000FCEC13 /* GoalController.swift */,
 				D58C473520C9663500FCEC13 /* PageCell.swift */,
 				D51D84DC20D03CA9006A7AE0 /* AddGoalController.swift */,
@@ -151,10 +157,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5E902C520CEEA7B00312EC0 /* Goal.swift in Sources */,
+				D5672A4720D3FF09000E0D30 /* MakeItHappenCoreData.xcdatamodeld in Sources */,
 				D5E902C720CF2B7600312EC0 /* AllGoalsView.swift in Sources */,
 				D51D84DD20D03CA9006A7AE0 /* AddGoalController.swift in Sources */,
 				D58C472420C8A4C000FCEC13 /* GoalController.swift in Sources */,
 				D58C472220C8A4C000FCEC13 /* AppDelegate.swift in Sources */,
+				D5672A4920D400A8000E0D30 /* CoreDataManager.swift in Sources */,
 				D5672A4420D3217A000E0D30 /* CostumNavigationBar.swift in Sources */,
 				D58C473620C9663500FCEC13 /* PageCell.swift in Sources */,
 			);
@@ -352,6 +360,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D5672A4520D3FF09000E0D30 /* MakeItHappenCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D5672A4620D3FF09000E0D30 /* MakeItHappenCoreData.xcdatamodel */,
+			);
+			currentVersion = D5672A4620D3FF09000E0D30 /* MakeItHappenCoreData.xcdatamodel */;
+			path = MakeItHappenCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D58C471620C8A4C000FCEC13 /* Project object */;
 }

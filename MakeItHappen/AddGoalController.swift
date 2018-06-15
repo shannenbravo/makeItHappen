@@ -88,6 +88,30 @@ class AddGaolController: UIViewController {
     
     @objc func handleSave(){
         print("attempting to save")
+        guard let goalNameText = goalTextField.text else {return}
+        guard let goalPurposeText = purposeTextField.text else {return}
+        if goalNameText.isEmpty{
+            showError(title: "No Goal", message: "Please enter a goal")
+            
+        }
+        
+        if goalPurposeText.isEmpty{
+            showError(title: "No Purpose", message: "No purpose ")
+        }
+        
+        let tuple = CoreDataManager.shared.saveGoals(goalName: goalNameText, purpose: goalPurposeText, accompishDate: datePicker.date)
+        
+        print("Save Completed")
+        
+        dismiss(animated: true, completion: nil)
+        
+        
+    }
+    
+    func showError(title: String, message: String){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
     
     
