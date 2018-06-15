@@ -99,7 +99,7 @@ class AddGaolController: UIViewController {
             showError(title: "No Purpose", message: "No purpose ")
         }
         
-        let tuple = CoreDataManager.shared.saveGoals(goalName: goalNameText, purpose: goalPurposeText, accompishDate: datePicker.date)
+        _ = CoreDataManager.shared.saveGoals(goalName: goalNameText, purpose: goalPurposeText, accompishDate: datePicker.date)
         
         print("Save Completed")
         

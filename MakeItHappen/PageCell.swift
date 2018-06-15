@@ -8,23 +8,30 @@
 //THIS CLASS IS THE COSTUM CELLS IN THE GOLACONTROLLER CLASS
 
 import UIKit
+import CoreData
 
 protocol PopupModalDelegate {
     func didPressMenuButton(allGoalsView: UINavigationController)
 }
+
 class PageCell: UICollectionViewCell{
+   
     
     var delegate: PopupModalDelegate?
     
-    var goal: Goal? {
+    var goal: Goals? {
         didSet{
             guard let unWrappedGoal = goal else {return}
-            let attributedText = NSMutableAttributedString(string: unWrappedGoal.goalName, attributes: [NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: 20)])
-            attributedText.append(NSMutableAttributedString(string: "\n\n\(unWrappedGoal.goalDescription)", attributes: [NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: 13), NSAttributedStringKey.foregroundColor:UIColor.gray]))
-            attributedText.append(NSMutableAttributedString(string: "\n\n\(unWrappedGoal.accoplishDate)", attributes: [NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: 13), NSAttributedStringKey.foregroundColor:UIColor.blue]))
+            guard let goalText = unWrappedGoal.goalName else {return}
+            guard let purposeText = unWrappedGoal.reason else {return}
+            guard let goalDate = unWrappedGoal.accompishDate else {return}
+            let dateformatter = DateFormatter()
+            dateformatter.dateFormat = "MMM dd, yyyy"
+            let attributedText = NSMutableAttributedString(string: goalText, attributes: [NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: 20)])
+            attributedText.append(NSMutableAttributedString(string: "\n\n\(purposeText)", attributes: [NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: 13), NSAttributedStringKey.foregroundColor:UIColor.gray]))
+            attributedText.append(NSMutableAttributedString(string: "\n\n\(dateformatter.string(from: goalDate))", attributes: [NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: 13), NSAttributedStringKey.foregroundColor:UIColor.blue]))
             goalTextView.attributedText = attributedText
             goalTextView.textAlignment = .left
-            
         }
     }
     
@@ -76,6 +83,7 @@ class PageCell: UICollectionViewCell{
         backgroundImageConstraints()
         setupUI()
         backgroundColor = .purple
+        
         
     }
     

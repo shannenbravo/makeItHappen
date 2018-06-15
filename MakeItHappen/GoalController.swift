@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import CoreData
+
+protocol GoalsDelegate {
+    func didSetGoal(goal: Goals)
+}
 
 
 class GoalController: UICollectionViewController, UICollectionViewDelegateFlowLayout, PopupModalDelegate  {
@@ -14,14 +19,24 @@ class GoalController: UICollectionViewController, UICollectionViewDelegateFlowLa
         present(allGoalsView, animated: true, completion: nil)
     }
     
- 
     
-
-    let goals = [
-        Goal(goalName: "Lose 20 pounds", goalDescription: "Lose 20 pounds and run a 3k marathon", accoplishDate: "October 13, 2018"),
-        Goal(goalName: "Get a scholarship ot GHC", goalDescription: "Allows me to connect with comapnies that I want to work for", accoplishDate: "September 12,2019"),
-        Goal(goalName: "Get a job offer from spaceX", goalDescription: "I love working in space itelligence", accoplishDate: "May 15, 2019")
-    ]
+    //goal Array
+    var allGoals = [Goals]()
+    var goalDelegate: GoalsDelegate?
+    
+    private func fetchData(){
+        let context = CoreDataManager.shared.persistantContainer.viewContext
+        let fetchRequest = NSFetchRequest<Goals>(entityName: "Goals")
+        do{
+            let goals = try context.fetch(fetchRequest)
+            allGoals = goals
+            self.collectionView?.reloadData()
+        }catch let fetchErr{
+            print("Falied to fetch data \(fetchErr)")
+        }
+    }
+    
+    
 
     let cellId = "CellId"
     override func viewDidLoad() {
@@ -37,14 +52,16 @@ class GoalController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     //return the number of cells
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return goals.count
+        return allGoals.count
+//        return 1
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //deque cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PageCell
-        let cellGoal = goals[indexPath.item]
-        cell.delegate = self
+        let cellGoal = allGoals[indexPath.item]
+        self.goalDelegate?.didSetGoal(goal: cellGoal)
         cell.goal = cellGoal
+        cell.delegate = self
         return cell
     }
     
