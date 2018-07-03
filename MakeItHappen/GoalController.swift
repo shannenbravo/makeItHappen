@@ -31,6 +31,7 @@ class GoalController: UICollectionViewController, UICollectionViewDelegateFlowLa
             let goals = try context.fetch(fetchRequest)
             allGoals = goals
             self.collectionView?.reloadData()
+            print(allGoals.count)
         }catch let fetchErr{
             print("Falied to fetch data \(fetchErr)")
         }
@@ -47,6 +48,7 @@ class GoalController: UICollectionViewController, UICollectionViewDelegateFlowLa
         collectionView?.register(PageCell.self, forCellWithReuseIdentifier: cellId)
         //make paging enabled
         collectionView?.isPagingEnabled = true
+        fetchData()
         
     }
     
